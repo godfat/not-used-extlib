@@ -55,4 +55,8 @@ describe Module do
     Object.find_const('Bar').should == Bar
   end
 
+  it "should find outer constant as well" do
+    Foo::ModBar::Noo.find_const('Zed') == Foo::Zed
+  end
+
 end
